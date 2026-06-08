@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三菱PLC + ワイドミュラー u-remote EIP接続方法</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #fafafa; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6;">
+
+    <header style="background-color: #ffaa00; color: #111; padding: 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h1 style="margin: 0; font-size: 20px;">UR20-FBC-EIP 接続設定</h1>
+        <p style="margin: 5px 0 0 0; font-size: 12px;">三菱PLC (EtherNet/IP) 〜 ワイドミュラー リモートI/O 接続</p>
+    </header>
+
+    <main style="max-width: 800px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        
+        <section style="margin-bottom: 40px; border-left: 4px solid #ffaa00; padding-left: 15px;">
+            <h2 style="margin-top: 0; color: #111; font-size: 18px;">1. システム構成概要</h2>
+            <p>本ページは、三菱電機製PLC（EtherNet/IPマスタ）と、ワイドミュラー製リモートI/Oシステム「u-remote」（UR20-FBC-EIP）を接続し、データ通信を行うための初期設定手順です。</p>
+        </section>
+
+        <section style="margin-bottom: 40px;">
+            <h3 style="color: #444; font-size: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">【システム構成図】</h3>
+            <div style="background-color: #f0f0f0; padding: 20px; text-align: center; border-radius: 6px; border: 1px dashed #ccc; margin: 15px 0;">
+                <img src="system-map.png" alt="システム構成図" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">         
+            </div>
+        </section>
+
+        <section style="margin-bottom: 40px;">
+            <h3 style="color: #444; font-size: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">【初期IPアドレス・設定値】</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px;">
+                <thead>
+                    <tr style="background-color: #333; color: #fff;">
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">機器名</th>
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">デフォルトIP</th>
+                        <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">設定ネットワーク</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #fff;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">三菱PLC (Master)</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">11.11.11.1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;" rowspan="2">CC-Link IE TSN ネットワーク<br>(サブネット: 255.255.255.0)</td>
+                    </tr>
+                    <tr style="background-color: #f9f9f9;">
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">UR20-PN-FSCC</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">11.11.11.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="margin-top: 0; color: #111; font-size: 18px;">2. 操作手順</h2>
+            <p>以下追記予定・・・</p>
+        </section>
+
+        <section style="margin-top: 40px;">
+        <h2 style="font-size: 18px; border-bottom: 2px solid #ffaa00; padding-bottom: 5px;">1. 使用部品構成</h2>
+        <h3 style="font-size: 16px;">1.1 使用製品</h3>
+        <p>本安全リモートIOをご使用する際は、下記のマスタ機器および関連機器をご使用ください。</p>
+        
+        <h4>【ハードウェア】</h4>
+        <ul>
+            <li><strong>安全CPU</strong><br>R08SFCPU，R16SFCPU，R32SFCPU，R120SFCPU ※バージョン20以降</li>
+            <li><strong>安全機能ユニット R6SFM</strong> ※バージョン20以降</li>
+            <li><strong>CC-Link IE TSNマスタ</strong><br>RJ71GN11-T2 ※バージョン28以降</li>
+            <li><strong>モーションユニット</strong><br>RD78G4，RD78G4(S)，RD78G8，RD78G8(S)，RD78G16，<br>RD78G16(S)，RD78G32，RD78G64，RD78GHV，RD78GHW ※バージョン34以降</li>
+        </ul>
+
+        <h4>【ソフトウェア】</h4>
+        <ul>
+            <li><strong>GX-Works3</strong><br>1.115以降</li>
+        </ul>
+        <p style="font-size: 0.9em; color: #d32f2f;">※バージョン1.115V以前のGX Works3を使用した場合は、動作保証がございません。</p>
+        </section>
+
+        
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: #888; font-size: 11px; background-color: #eeedeb; margin-top: 50px;">
+        <p>© 2026 Ryota - Industrial Automation Lab. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
