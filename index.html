@@ -8,14 +8,35 @@
 <body style="margin: 0; padding: 0; background-color: #fafafa; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; line-height: 1.6;">
 
     <header style="background-color: #ffaa00; color: #111; padding: 15px 20px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
-        <h1 style="margin: 0; font-size: 20px;">UR20-XXX-EIP-FSCC 簡易接続マニュアル</h1>
+        <h1 style="margin: 0; font-size: 20px;">UR20-XXX 簡易接続マニュアル</h1>
         
-        <p style="margin: 5px 0 0 0; font-size: 12px; font-weight: bold;">
-            三菱PLC 
-            <span style="font-weight: normal; margin-left: 10px;">
-                ( 🔗 <a href="https://chigkirta-oss.github.io/ur20-fscc-manual/" style="color: #111; text-decoration: underline;">CC-Link IE TSN編はこちら</a> )
-            </span>
-        </p>
+        <nav style="margin-top: 15px; display: flex; justify-content: center;">
+            
+            <div class="dropdown" style="position: relative; display: inline-block;">
+                
+                <button style="background: none; border: none; font-size: 14px; font-weight: bold; color: #111; cursor: pointer; padding: 5px 15px;">
+                    三菱PLC マニュアル一覧 ∨
+                </button>
+                
+                <div class="dropdown-content" style="display: none; position: absolute; left: 50%; transform: translateX(-50%); background-color: #ffffff; min-width: 180px; box-shadow: 0px 8px 16px rgba(0,0,0,0.15); border-radius: 4px; z-index: 1001; margin-top: 5px;">
+                    <a href="https://chigkirta-oss.github.io/ur20-fscc-manual/" style="color: #333; padding: 12px 16px; text-decoration: none; display: block; font-size: 13px; text-align: left; border-bottom: 1px solid #eee;">CC-Link IE TSN編</a>
+                    <a href="https://chigkirta-oss.github.io/ur20-eip-manual/" style="color: #333; padding: 12px 16px; text-decoration: none; display: block; font-size: 13px; text-align: left;">EtherNet/IP編</a>
+                </div>
+                
+            </div>
+            </nav>
+
+        <style>
+            /* .dropdown にマウスが乗ったら（:hover）、その中にある .dropdown-content を表示する */
+            .dropdown:hover .dropdown-content {
+                display: block !important;
+            }
+            /* メニュー内のリンクにマウスが乗ったら、背景を少しグレーにして分かりやすくする */
+            .dropdown-content a:hover {
+                background-color: #f5f5f5;
+                color: #ffaa00 !important;
+            }
+        </style>
     </header>
 
     <main style="max-width: 800px; margin: 30px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
